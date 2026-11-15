@@ -92,7 +92,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .code-win .bar i:nth-child(1){background:var(--coral)}.code-win .bar i:nth-child(2){background:var(--amber)}.code-win .bar i:nth-child(3){background:var(--teal)}
 .code-win pre{margin:0;padding:18px 20px;font-family:var(--mono);font-size:.82rem;line-height:1.75;color:var(--muted);overflow-x:auto}
 .k{color:var(--violet)}.s{color:var(--teal)}.f{color:var(--amber)}.c{color:#5d6686}
-@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-card{justify-self:start}}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-card{justify-self:start}#scene{opacity:.35}}
 
 /* sections */
 section{padding-block:clamp(72px,9vw,120px)}
@@ -805,8 +805,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         renderer.setSize(w, h, false);
         cam.aspect = w/h; cam.updateProjectionMatrix();
         // on wide screens push the object right, behind the code card; centered on mobile
-        group.position.x = w > 900 ? 3.6 : 0;
-        group.position.y = w > 900 ? 0 : -1.5;
+        group.position.x = w > 900 ? 3.6 : 2.4;
+        group.position.y = w > 900 ? 0 : -3;
         group.scale.setScalar(w > 900 ? 1 : .75);
       }
       window.addEventListener('resize', resize); resize();
